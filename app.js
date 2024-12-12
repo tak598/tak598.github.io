@@ -104,45 +104,60 @@ void move(int n, int x, int y)
   }
 });
 
+
 const showProgram = (itemName) => {
   const input1 = Number(document.querySelector("#input1").value);
   const input2 = Number(document.querySelector("#input2").value);
   const input3 = Number(document.querySelector("#input3").value);
 
-  if (isNaN(input1) || isNaN(input2) || isNaN(input3)){
-    console.log("正の整数値を入力してください")
+  if (isNaN(input1) || isNaN(input2) || isNaN(input3) || input1 < 0 || input2 < 0 || input3 < 0){
     result.innerHTML = "正の整数値を入力してください";
     return null;
   }
 
-  if (input1 >= 20 || input2 >= 20 || input3 >= 20) {
-    console.log("値が多すぎます")
-    result.innerHTML = "値を20以下にしてください";
-    return null;
-  }
-
-
-
   switch (itemName) {
     case "factorial":
+      if(input1 > 10){
+        result.innerHTML = "nは10以下にしてください"
+        return null;
+      }
       showFactorial(input1);
       break;
     case "sum":
-      const n = showSum(input1);
-      console.log(n);
+      if(input1 > 20){
+        result.innerHTML = "nは20以下にしてください"
+        return null;
+      }
+      showSum(input1);
       break;
     case "power":
+      if(input1 > 10){
+        result.innerHTML = "x,yは10以下にしてください"
+        return null;
+      }
       showPower(input1, input2);
       break;
     case "GCD":
+      if(input1 > 1000 || input2 > 1000){
+        result.innerHTML = "x,yは1000以下にしてください"
+        return null;
+      }
       showGCD(input1, input2);
       break;
     case "fibonacci":
+      if(input1 > 7){
+        result.innerHTML = "nは7以下にしてください"
+        return null;
+      }
       showFibonacci(input1);
       break;
     case "hanoi":
-      if(input2 < 1 || input2 > 3  || input3 < 1 || input3 > 3){
+      if(input2 < 2 || input2 > 3  || input3 < 1 || input3 > 3){
         result.innerHTML = "x,yは1から3までで選んでください";
+        return null;
+      }
+      if(input1 > 5){
+        result.innerHTML = "nは5枚以下にしてください";
         return null;
       }
       showMove(input1, input2, input3);
