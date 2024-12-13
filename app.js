@@ -152,7 +152,7 @@ const showProgram = (itemName) => {
       showFibonacci(input1);
       break;
     case "hanoi":
-      if(input2 < 2 || input2 > 3  || input3 < 1 || input3 > 3){
+      if(input2 < 1 || input2 > 3  || input3 < 1 || input3 > 3){
         result.innerHTML = "x,yは1から3までで選んでください";
         return null;
       }
