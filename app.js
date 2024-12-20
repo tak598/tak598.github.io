@@ -5,6 +5,9 @@ const itemList = document.querySelector("#item-list");
 const head = document.querySelector("#head");
 const explain = document.querySelector("#explain")
 const program = document.querySelector("#program");
+const inputText1 = document.querySelector("#inputText1")
+const inputText2 = document.querySelector("#inputText2")
+const inputText3 = document.querySelector("#inputText3")
 let resultArray = [];
 let programText = "";
 let resultText = "";
@@ -27,6 +30,8 @@ itemList.addEventListener("change", () => {
   const itemName = itemList.value;
   switch (itemName) {
     case "factorial":
+      inputText2.style.display = 'none';
+      inputText3.style.display = 'none';
       head.innerHTML = "nの階乗の計算プログラム";
       explain.innerHTML = "第一引数にnの値を入力してください";
       program.innerHTML = `
@@ -39,6 +44,8 @@ int factorial(int n)
 }`;
       break;
     case "sum":
+      inputText2.style.display = 'none';
+      inputText3.style.display = 'none';
       head.innerHTML = "n以下の正の整数の総和の計算";
       explain.innerHTML = "第一引数にnの値を入力してください";
       program.innerHTML = `
@@ -51,6 +58,8 @@ int sum(int n)
 }`;
       break;
     case "power":
+      inputText2.style.display = '';
+      inputText3.style.display = 'none';
       head.innerHTML = "xのy乗を計算するプログラム";
       explain.innerHTML = "第一引数にx、第二引数にyの値を入力してください";
       program.innerHTML = `
@@ -63,6 +72,8 @@ int power(int x, int y)
 }`;
       break;
     case "GCD":
+      inputText2.style.display = '';
+      inputText3.style.display = 'none';
       head.innerHTML = "整数値x,yの最大公約数を返却するプログラム";
       explain.innerHTML = "第一引数にx、第二引数にyの値を入力してください";
       program.innerHTML = `
@@ -75,6 +86,8 @@ int gcd(int x, int y)
 }`;
       break;
     case "fibonacci":
+      inputText2.style.display = 'none';
+      inputText3.style.display = 'none';
       head.innerHTML = "フィボナッチ数列の計算";
       explain.innerHTML = "第一引数にnの値を入力してください";
       program.innerHTML = `
@@ -87,8 +100,10 @@ int fibonacci(int n) {
 }`;
       break;
     case "hanoi":
-      head.innerHTML = "ハノイの党のプログラム";
-      explain.innerHTML = "第一引数にn、第二引数にx,第三引数にyの値を入力してください (例:x軸からy軸へ、n枚移動させる)";
+      inputText2.style.display = '';
+      inputText3.style.display = '';
+      head.innerHTML = "ハノイの塔のプログラム";
+      explain.innerHTML = "第一引数にn、第二引数にx,第三引数にyの値を入力してください (例:x軸からy軸へ、n枚移動させる)<br>xとyは1から3までにしてください";
       program.innerHTML = `
 void move(int n, int x, int y)
 {
@@ -153,7 +168,11 @@ const showProgram = (itemName) => {
       break;
     case "hanoi":
       if(input2 < 1 || input2 > 3  || input3 < 1 || input3 > 3){
-        result.innerHTML = "x,yは1から3までで選んでください";
+        result.innerHTML = "xとyは1から3までで選んでください";
+        return null;
+      }
+      if(input2 === input3){
+        result.innerHTML = "xとyは違う値にしてください"
         return null;
       }
       if(input1 > 5){
