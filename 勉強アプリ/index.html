@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>勉強タイマー</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    #time { font-size: 48px; margin: 20px; }
+    #day { font-size: 24px; }
+    #total { font-size: 20px; margin-top: 10px; color: darkblue; }
+    button { font-size: 18px; padding: 10px 20px; margin: 5px; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <h1>勉強タイマー</h1>
+  <div id="day">現在: 1日目</div>
+  <div id="time">05:00</div>
+  <div id="total">累計勉強時間: 0時間0分</div>
+  <button id="startStop">スタート</button>
+
+  <script src="timer.js"></script>
+</body>
+</html>
