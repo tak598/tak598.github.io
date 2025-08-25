@@ -1,0 +1,68 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>勉強タイマー</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    #time { font-size: 48px; margin: 20px; }
+    #day { font-size: 24px; }
+    #total { font-size: 20px; margin-top: 10px; color: darkblue; }
+    button { font-size: 18px; padding: 10px 20px; margin: 5px; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <h1>勉強タイマー</h1>
+  <div id="day">現在: 1日目</div>
+  <div id="time">05:00</div>
+  <div id="total">累計勉強時間: 0時間0分</div>
+  <button id="startStop">スタート</button>
+
+  <script src="timer.js"></script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再帰的プログラム学習</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <label for="item-list">学びたい再帰的関数を選択してください</label><br>
+    <select id="item-list">
+        <option value="" disabled selected>--選択--</option>
+        <option value="factorial">nの階乗の計算</option>
+        <option value="sum">n以下の正の整数の総和の計算</option>
+        <option value="power">累乗の計算</option>
+        <option value="GCD">ユークリッドの互除法</option>
+        <option value="fibonacci">フィボナッチ数列の計算</option>
+        <option value="hanoi">ハノイの塔</option>
+    </select><br>
+
+    <h1 id="head"></h1>
+    <pre id="program"></pre>
+    <h3 id="explain"></h3>
+
+    <div id="inputContainer">
+        <div id="inputText1">第一引数=<input id="input1"></div>
+        <div id="inputText2">第二引数=<input id="input2"></div>
+        <div id="inputText3">第三引数=<input id="input3"></div>
+    </div>
+
+    <button id="button">結果の表示</button>
+
+    <pre id="result"></pre>
+    <pre id="valueResult"></pre>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
+>>>>>>> parent of 68bce0e (変更)
